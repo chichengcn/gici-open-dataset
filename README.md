@@ -1,1 +1,97 @@
-# gici-open-dataset
+# GICI-LIB Dataset
+
+This dataset is collected for the development of GICI-LIB. The platform is shown in the following figure.
+
+<p align="left">
+  <img alt="sensorsuit" src="./figures/platform/experiment_platform.png" width="500"> 
+</p>
+
+We developed a GICI board to collect IMU and camera data and applied hardware synchronization with other sensors in the whole platform. The onboard IMU and camera are Bosch BMI088 and Onsemi MT9V034 respectively. The GNSS receiver is a Tersus David30 multi-frequency receiver. We also collected the reference station data from the Qianxun SI stream for RTD and RTK formulations, and the State-Space-Representation (SSR) data from the International GNSS Service (IGS) stream for PPP formulations. The fiber IMU is used to provide the ground truth by post-processing its data together with GNSS raw data.
+
+We collected two kinds of datasets: short-term (several minutes) experiments (1.1 ~ 4.3) in different scenes, and long-term (tens of minutes) experiments (5.1 ~ 5.2) covering multiple scenes. For the short-term experiments, we categorize the scenes into 4 types: Open-sky, tree-lined, typical urban, and dense urban. And for each scene, we present 2 ~ 3 trajectories. For the long-term experiments, we provide two trajectories collected in the Shanghai city center that cover those scenes.
+
+Here is the list of the datasets
+
+| Scene | ID | size | date | Typical images | 
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| Open-sky | 1.1 | 0.7 GB | 2023.03.20 | [Images](figures/typical_scene/README_1.1.md) | 
+| Open-sky | 1.2 | 0.5 GB | 2023.03.27 | [Images](figures/typical_scene/README_1.2.md) |
+| Tree-lined | 2.1 | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.1.md) |
+| Tree-lined | 2.2 | 0.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.2.md) |
+| Typical urban | 3.1 | 1.7 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.1.md) |
+| Typical urban | 3.2 | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.2.md) |
+| Typical urban | 3.3 | 1.9 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.3.md) |
+| Dense urban | 4.1 | 1.4 GB | 2023.05.21 | [Images](figures/typical_scene/README_4.1.md) |
+| Dense urban | 4.2 | 0.8 GB | 2023.03.27 | [Images](figures/typical_scene/README_4.2.md) |
+| Dense urban | 4.3 | 1.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_4.3.md) |
+| Long-term | 5.1 | 8.2 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.1.md) |
+| Long-term | 5.2 | 5.8 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.2.md) |
+
+You can download them on [OneDrive](https://1drv.ms/f/s!Aq2sJkkB0M10jXecBfNuHSuEnrzM?e=Jz91kp).
+
+## 1. Run with Non-ROS Interface
+
+We provide various example YAML configuration files, see \<gici-root-directory\>/option. Remember to replace all the \<path\> and "start_time".
+
+Then, you can run the dataset by 
+
+```
+./gici_main <gici-config-file>
+```
+
+To connect the real-time output stream to [RTKLIB](https://rtklib.com/), you should do the following steps:
+
+a) Specify a TCP server output in NMEA format. The example configuration is shown in pseudo_real_time_estimation_RTK_RRR.yaml. 
+
+b) Open RTKPLOT in a Windows computer. To access the IP address of your Linux computer, your Windows computer must be on the same network segment.
+
+c) Click file->Connection Settings. Enable a TCP client. Click Opt to configure the TCP client options. Fill in the Server Address (IP of your Linux computer) and Port (Configured in GICI YAML file).
+
+d) Click file->Connect to form connection. Then you can see the real-time plots.
+
+## 2. Convert Raw Data to rosbags
+
+We provide a tool, converting the bin files to rosbags, see \<gici-root-directory\>/tools/ros/gici_tools/src/gici_files_to_rosbag.cpp. Its configuration file is at \<gici-root-directory\>/tools/ros/gici_tools/option/convert_rosbags.yaml. Remember to replace all the \<path\> and "start_time".
+
+You can compile the convertor by 
+
+```
+cd \<gici-root-directory\>/tools/ros
+catkin_make -DCMAKE_BUILD_TYPE=Release
+```
+
+Then you can run the convertor by
+
+```
+./devel/lib/gici_tools/gici_files_to_rosbag <config-file>
+```
+
+## 3. Run with ROS Interface
+
+We also provide various example YAML configuration files for ROS interface, see \<gici-root-directory\>/ros_wrapper/src/gici/option. Remember to replace all the \<path\> and "start_time".
+
+Before you run the ROS executable, remember to run a roscore. Then, you can run the executable by 
+
+```
+rosrun gici_ros gici_ros_main <gici-config-file>
+```
+or
+
+```
+cd \<gici-root-directory\>/ros_wrapper
+./devel/lib/gici_ros/gici_ros_main <gici-config-file>
+```
+
+After that, you can play the rosbags converted from our bin files by
+
+```
+rosbag play <data1.bag> <data2.bag> <data3.bag> ...
+```
+
+For visualization, you can run our RVIZ configuration by
+
+```
+rviz -d \<gici-root-directory\>/ros_wrapper/src/gici/rviz/gici_gic.rviz
+```
+
+
