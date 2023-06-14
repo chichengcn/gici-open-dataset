@@ -94,4 +94,49 @@ For visualization, you can run our RVIZ configuration by
 rviz -d \<gici-root-directory\>/ros_wrapper/src/gici/rviz/gici_gic.rviz
 ```
 
+## 4. Evaluation
 
+We provide ground_truth.txt for each dataset. The ground truth data is in the frame of fiber IMU. You should apply a coordinate convertion before comparing the results. 
+
+For the estimators containing IMU, GICI outputs solution in the IMU frame. We provide tools converting the ground truth to the IMU frame.
+
+First, you should compile the tools by
+
+```
+cd \<gici-root-directory\>tools/evaluation/alignment
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j8
+
+cd \<gici-root-directory\>tools/evaluation/format_converters
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j8
+```
+
+Then you can convert the ground truth by
+
+```
+\<gici-root-directory\>tools/evaluation/format_converters/build/ie_to_nmea ground_truth.txt
+\<gici-root-directory\>tools/evaluation/alignment/build/nmea_pose_to_pose ground_truth.txt.nmea
+```
+
+The default settings in nmea_pose_to_pose.cpp is converting poses from the fiber IMU frame to IMU frame for our dataset. If you have other requirements, you should modify the parameters in nmea_pose_to_pose.cpp.
+
+Now you get a ground truth file ground_truth.txt.nmea.transformed in NMEA format. For easy visualization, you can convert this file to the TUM format by
+
+```
+\<gici-root-directory\>tools/evaluation/format_converters/build/nmea_to_tum ground_truth.txt.nmea.transformed
+```
+
+You can also convert the GICI NMEA output to the TUM format, and then compare them by any software.
+
+For the GNSS-only estimators, GICI outputs solution in the GNSS antenna frame. You should further convert the ground truth to GNSS antenna by
+
+```
+\<gici-root-directory\>tools/evaluation/alignment/build/nmea_pose_to_position ground_truth.txt.nmea.transformed
+```
+
+Now you get a ground truth file ground_truth.txt.nmea.transformed.translated. Then you can continue the operations above.
