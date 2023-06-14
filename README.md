@@ -12,20 +12,20 @@ We collected two kinds of datasets: short-term (several minutes) experiments (1.
 
 Here is the list of the datasets
 
-| Scene | ID | size | date | Typical images | 
+| ID | Scene | Size | Date | Scene View | 
 |:--------------|:--------------|:--------------|:--------------|:--------------|
-| Open-sky | 1.1 | 0.7 GB | 2023.03.20 | [Images](figures/typical_scene/README_1.1.md) | 
-| Open-sky | 1.2 | 0.5 GB | 2023.03.27 | [Images](figures/typical_scene/README_1.2.md) |
-| Tree-lined | 2.1 | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.1.md) |
-| Tree-lined | 2.2 | 0.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.2.md) |
-| Typical urban | 3.1 | 1.7 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.1.md) |
-| Typical urban | 3.2 | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.2.md) |
-| Typical urban | 3.3 | 1.9 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.3.md) |
-| Dense urban | 4.1 | 1.4 GB | 2023.05.21 | [Images](figures/typical_scene/README_4.1.md) |
-| Dense urban | 4.2 | 0.8 GB | 2023.03.27 | [Images](figures/typical_scene/README_4.2.md) |
-| Dense urban | 4.3 | 1.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_4.3.md) |
-| Long-term | 5.1 | 8.2 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.1.md) |
-| Long-term | 5.2 | 5.8 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.2.md) |
+| 1.1 | Open-sky | 0.7 GB | 2023.03.20 | [Images](figures/typical_scene/README_1.1.md) | 
+| 1.2 | Open-sky | 0.5 GB | 2023.03.27 | [Images](figures/typical_scene/README_1.2.md) |
+| 2.1 | Tree-lined | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.1.md) |
+| 2.2 | Tree-lined | 0.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.2.md) |
+| 3.1 | Typical urban | 1.7 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.1.md) |
+| 3.2 | Typical urban | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.2.md) |
+| 3.3 | Typical urban | 1.9 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.3.md) |
+| 4.1 | Dense urban | 1.4 GB | 2023.05.21 | [Images](figures/typical_scene/README_4.1.md) |
+| 4.2 | Dense urban | 0.8 GB | 2023.03.27 | [Images](figures/typical_scene/README_4.2.md) |
+| 4.3 | Dense urban | 1.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_4.3.md) |
+| 5.1 | Long-term | 8.2 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.1.md) |
+| 5.2 | Long-term | 5.8 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.2.md) |
 
 You can download them on [OneDrive](https://1drv.ms/f/s!Aq2sJkkB0M10jXecBfNuHSuEnrzM?e=Jz91kp).
 
