@@ -3,7 +3,7 @@
 This dataset is collected for the development of GICI-LIB. The platform is shown in the following figure.
 
 <p align="left">
-  <img alt="sensorsuit" src="./figures/platform/experiment_platform.png" width="500"> 
+  <img alt="sensorsuit" src="./figures/experiment_platform.png" width="500"> 
 </p>
 
 We developed a GICI board to collect IMU and camera data and applied hardware synchronization with other sensors in the whole platform. The onboard IMU and camera are Bosch BMI088 and Onsemi MT9V034 respectively. The GNSS receiver is a Tersus David30 multi-frequency receiver. We also collected the reference station data from the Qianxun SI stream for RTD and RTK formulations, and the State-Space-Representation (SSR) data from the International GNSS Service (IGS) stream for PPP formulations. The fiber optic IMU is used to provide the ground truth by post-processing its data together with GNSS raw data.
