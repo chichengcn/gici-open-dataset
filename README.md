@@ -6,7 +6,7 @@ This dataset is collected for the development of GICI-LIB. The platform is shown
   <img alt="sensorsuit" src="./figures/platform/experiment_platform.png" width="500"> 
 </p>
 
-We developed a GICI board to collect IMU and camera data and applied hardware synchronization with other sensors in the whole platform. The onboard IMU and camera are Bosch BMI088 and Onsemi MT9V034 respectively. The GNSS receiver is a Tersus David30 multi-frequency receiver. We also collected the reference station data from the Qianxun SI stream for RTD and RTK formulations, and the State-Space-Representation (SSR) data from the International GNSS Service (IGS) stream for PPP formulations. The fiber IMU is used to provide the ground truth by post-processing its data together with GNSS raw data.
+We developed a GICI board to collect IMU and camera data and applied hardware synchronization with other sensors in the whole platform. The onboard IMU and camera are Bosch BMI088 and Onsemi MT9V034 respectively. The GNSS receiver is a Tersus David30 multi-frequency receiver. We also collected the reference station data from the Qianxun SI stream for RTD and RTK formulations, and the State-Space-Representation (SSR) data from the International GNSS Service (IGS) stream for PPP formulations. The fiber optic IMU is used to provide the ground truth by post-processing its data together with GNSS raw data.
 
 We collected two kinds of datasets: short-term (several minutes) experiments (1.1 ~ 4.3) in different scenes, and long-term (tens of minutes) experiments (5.1 ~ 5.2) covering multiple scenes. For the short-term experiments, we categorize the scenes into 4 types: Open-sky, tree-lined, typical urban, and dense urban. And for each scene, we present 2 ~ 3 trajectories. For the long-term experiments, we provide two trajectories collected in the Shanghai city center that cover those scenes.
 
@@ -96,7 +96,7 @@ rviz -d \<gici-root-directory\>/ros_wrapper/src/gici/rviz/gici_gic.rviz
 
 ## 4. Evaluation
 
-We provide ground_truth.txt for each dataset. The ground truth data is in the frame of fiber IMU. You should apply a coordinate convertion before comparing the results. 
+We provide ground_truth.txt for each dataset. The ground truth data is in the frame of fiber optic IMU. You should apply a coordinate convertion before comparing the results. 
 
 For the estimators containing IMU, GICI outputs solution in the IMU frame. We provide tools converting the ground truth to the IMU frame.
 
@@ -123,7 +123,7 @@ Then you can convert the ground truth by
 \<gici-root-directory\>tools/evaluation/alignment/build/nmea_pose_to_pose ground_truth.txt.nmea
 ```
 
-The default settings in nmea_pose_to_pose.cpp is converting poses from the fiber IMU frame to IMU frame for our dataset. If you have other requirements, you should modify the parameters in nmea_pose_to_pose.cpp.
+The default settings in nmea_pose_to_pose.cpp is converting poses from the fiber optic IMU frame to IMU frame for our dataset. If you have other requirements, you should modify the parameters in nmea_pose_to_pose.cpp.
 
 Now you get a ground truth file ground_truth.txt.nmea.transformed in NMEA format. For easy visualization, you can convert this file to the TUM format by
 
