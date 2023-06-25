@@ -16,7 +16,7 @@ Here is the list of the datasets
 |:--------------|:--------------|:--------------|:--------------|:--------------|
 | 1.1 | Open-sky | 0.7 GB | 2023.03.20 | [Images](figures/typical_scene/README_1.1.md) | 
 | 1.2 | Open-sky | 0.5 GB | 2023.03.27 | [Images](figures/typical_scene/README_1.2.md) |
-| 2.1 | Tree-lined | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.1.md) |
+| 2.1 | Tree-lined | 1.4 GB | 2023.03.20 | [Images](figures/typical_scene/README_2.1.md) |
 | 2.2 | Tree-lined | 0.6 GB | 2023.03.27 | [Images](figures/typical_scene/README_2.2.md) |
 | 3.1 | Typical urban | 1.7 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.1.md) |
 | 3.2 | Typical urban | 1.4 GB | 2023.03.27 | [Images](figures/typical_scene/README_3.2.md) |
