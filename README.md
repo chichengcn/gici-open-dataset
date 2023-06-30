@@ -27,7 +27,7 @@ Here is the list of the datasets
 | 5.1 | Long-term | 8.2 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.1.md) |
 | 5.2 | Long-term | 5.8 GB | 2023.05.21 | [Images](figures/typical_scene/README_5.2.md) |
 
-You can download them on [OneDrive](https://1drv.ms/f/s!Aq2sJkkB0M10jXecBfNuHSuEnrzM?e=Jz91kp) or [BaiduCloud]([https://1drv.ms/f/s!Aq2sJkkB0M10jXecBfNuHSuEnrzM?e=Jz91kp](https://pan.baidu.com/s/1xZS-C_42LrGtUB0x6Bw_0A?pwd=6ncd ).
+You can download them on [OneDrive](https://1drv.ms/f/s!Aq2sJkkB0M10jXecBfNuHSuEnrzM?e=Jz91kp) or [BaiduCloud](https://pan.baidu.com/s/1xZS-C_42LrGtUB0x6Bw_0A?pwd=6ncd).
 
 ## 1. Run with Non-ROS Interface
 
