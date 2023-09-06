@@ -1,4 +1,4 @@
-# Typical Images of GICI-LIB Dataset 3.1 
+# Typical Images of GICI-LIB Dataset 3.3
 
 <p align="left">
   <img alt="sensorsuit" src="./3.3-1.png" width="480"> 
