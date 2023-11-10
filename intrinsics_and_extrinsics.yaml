@@ -42,7 +42,7 @@ T_B_Bf:
         -0.009662127298174172374,  0.001132785924064993229,   -0.9999526789264197024,   0.06657108425640941018,
                               0,                        0,                        0,                        1]
 
-# Body to IMU extrinsic
+# Body to IMU extrinsic. The body frame is defined as right-forward-up.
 # Rotation of Body in IMU frame. (coarse)
 R_B_B0:
   cols: 3
