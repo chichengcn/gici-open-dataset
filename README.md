@@ -98,7 +98,7 @@ rviz -d \<gici-root-directory\>/ros_wrapper/src/gici/rviz/gici_gic.rviz
 
 We provide ground_truth.txt for each dataset. The ground truth data is in the frame of fiber optic IMU. You should apply a coordinate convertion before comparing the results. 
 
-For the estimators containing IMU, GICI outputs solution in the IMU frame. We provide tools converting the ground truth to the IMU frame.
+For the estimators containing IMU, GICI outputs solution in the body frame. We provide tools converting the ground truth to the body frame.
 
 First, you should compile the tools by
 
@@ -123,7 +123,7 @@ Then you can convert the ground truth by
 \<gici-root-directory\>tools/evaluation/alignment/build/nmea_pose_to_pose ground_truth.txt.nmea
 ```
 
-The default settings in nmea_pose_to_pose.cpp is converting poses from the fiber optic IMU frame to IMU frame for our dataset. If you have other requirements, you should modify the parameters in nmea_pose_to_pose.cpp.
+The default settings in nmea_pose_to_pose.cpp is converting poses from the fiber optic IMU frame to body frame for our dataset. If you have other requirements, you should modify the parameters in nmea_pose_to_pose.cpp.
 
 Now you get a ground truth file ground_truth.txt.nmea.transformed in NMEA format. For easy visualization, you can convert this file to the TUM format by
 
