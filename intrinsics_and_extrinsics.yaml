@@ -1,4 +1,4 @@
-# Camera intrinsics
+# Camera intrinsics 
 image_width: 752
 image_height: 480
 type: pinhole
@@ -14,8 +14,8 @@ distortion:
     data: [-0.36472323465957157, 0.11530151924890532, 0.0006024586154990503, 0.0020184970860498133]
 
 # Camera to IMU extrinsic
-# Transform of camera in IMU frame.
-T_B_C:
+# Transform of camera (C) in IMU (I) frame.
+T_I_C:
   cols: 4
   rows: 4
   data: [0.0134381210697455122,   -0.999901594987671172, -0.00402706384669154413,  -0.0229793554058591656,
@@ -24,17 +24,36 @@ T_B_C:
                             0,                       0,                       0,                       1]
 
 # GNSS to IMU extrinsic (lever-arm)
-# Translation of GNSS antenna in IMU frame.
-t_B_R:
+# Translation of GNSS antenna (R) in IMU (I) frame.
+t_I_R:
   cols: 3
   rows: 1
   data: [-0.029,
         0.354,
         -0.042]
 
-# Fiber IMU to IMU extrinsic
-# Transform of Fiber IMU in IMU frame.
-T_B_Bf:
+# Body to IMU extrinsic. The body frame is defined as right-forward-up. 
+# Rotation of Body (B) in IMU (I) frame. (coarse)
+R_I_B:
+  cols: 3
+  rows: 3
+  data: [0, 0, 1,
+        1, 0, 0,
+        0, 1, 0]
+
+# LiDAR to IMU extrinsic
+# Transform of LiDAR (L) in IMU (I) frame. 
+T_I_L:
+  cols: 4
+  rows: 4
+  data: [-0.003487329089, -0.06104843331, 0.9981287128, -0.0255208369,
+        0.0001522600762, -0.9981348031, -0.06104827383, 0.1505764402,
+        0.9999939077, -6.092026723e-05, 0.003490119772, -0.0183429036,
+        0.0000000000, 0.0000000000,  0.0000000000,  1.0000000000]
+
+# Ground Truth to Body extrinsic. The ground truth frame is defined as left-forward-down. 
+# Transform of Ground Truth (GT) in Body (B) frame.
+T_B_GT:
   cols: 4
   rows: 4
   data: [-0.999871192442087553,   -0.0128272212687904081,  0.009646808744800929036, -0.001631526123218773189,
@@ -42,11 +61,13 @@ T_B_Bf:
         -0.009662127298174172374,  0.001132785924064993229,   -0.9999526789264197024,   0.06657108425640941018,
                               0,                        0,                        0,                        1]
 
-# Body to IMU extrinsic. The body frame is defined as right-forward-up.
-# Rotation of Body in IMU frame. (coarse)
-R_B_B0:
+# Fiber IMU to Ground Truth extrinsic. 
+# Rotation of Fiber IMU (FI) frame in Ground Truth (GT) frame.
+R_GT_FI:
   cols: 3
   rows: 3
   data: [0, 0, 1,
-         1, 0, 0,
-         0, 1, 0]
+        0, 1, 0,
+        -1, 0, 0]
+
+
