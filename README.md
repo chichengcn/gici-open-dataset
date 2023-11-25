@@ -3,7 +3,7 @@
 This dataset is collected for the development of GICI-LIB. The platform is shown in the following figure.
 
 <p align="center">
-  <img alt="platform" src="./figures/platform_and_coordinates_sideway.png" width="1000"> 
+  <img alt="platform" src="./figures/platform_and_coordinates_sideway.png" width="950"> 
 </p>
 
 <p align="center">
