@@ -3,14 +3,10 @@
 This dataset is collected for the development of GICI-LIB. The platform is shown in the following figure.
 
 <p align="left">
-  <img alt="platform" src="./figures/experiment_platform.png" width="500"> 
+  <img alt="platform" src="./figures/platform_and_coordinates_sideway.png" width="900"> 
 </p>
 
-<p align="left">
-  <img alt="coordinate_sideway" src="./figures/coordinates_sideway.png" width="500"> 
-</p>
-
-<p align="left">
+<p align="center">
   <img alt="coordinate" src="./figures/coordinates.png" width="700"> 
 </p>
 
